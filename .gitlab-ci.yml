@@ -1,0 +1,35 @@
+# .gitlab-ci.yml
+
+image: cypress/browsers:node18.16.0-chrome115-ff116
+
+stages:
+  - install
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  # Instala as dependências do projeto
+  - npm install
+
+install:
+  stage: install
+  script:
+    - npm ci  # Install dependencies based on package-lock.json
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 week
+
+cypress_tests:
+  stage: test
+  script:
+    - npx cypress run
+  artifacts:
+    when: always
+    paths:
+      - cypress/screenshots/
+      - cypress/videos/
+  allow_failure: false
