@@ -19,4 +19,4 @@
 - Mobile -> npm run cy:open:mobile
 
 ## Testes CI/CD
-- No arquivo ci.yml foram feitas algumas configuraçoẽs para que os testes sejam executados a cada commit realizado no projeto e dispara essa pipeline
+- No arquivo ci.yml foram feitas algumas configuraçoẽs para que os testes sejam executados a cada commit realizado no projeto e dispara essa pipeline onde são executados os testes com os cenários
