@@ -1,12 +1,30 @@
 name: End-to-end tests 🧪
 on: [push]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Use a versão Node.js adequada
+
+      - name: Install NPM dependencies
+        run: npm install
+
+      - name: Cache NPM modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          config-file: cypress.config.js
