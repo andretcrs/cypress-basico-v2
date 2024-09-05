@@ -1,29 +1,22 @@
-# Testes automatizados com Cypress - Básico
-
 👋 Seja bem-vindo(a)!
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai adorar este curso. ❤️
+# Testes automatizados com Cypress - Básico
 
-## O que você vai aprender
+# Descrição
+- Os cenários foram criados durante o curso de cypress básico com algumas boa práticas e comandos mais utilizado em cypress.
 
-Durante o curso de testes automatizados com Cypress (básico), você vai aprender:
+## Pŕe requisitos 
+- Git, npm e Node.js(14.21.3) instalados
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar _upload_ de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como executar os testes em um _pipeline_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
+## Passos para instalação das dependências
 
-## Vamos começar?
+- Faça um fork do projeto em https://github.com/andretcrs/cypress-basico-v2
+- Com o node instalado, execute no terminal o comando npm i na pasta do projeto
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
+## Como rodar os testes
+- Modo interativo -> npx cypress open
+- Headless  -> npm run cy:run:mobile:headless
+- Mobile -> npm run cy:open:mobile
 
-___
-
-Este é mais um curso da [**Escola Talking About Testing**](https://udemy.com/user/walmyr).
+## Testes CI/CD
+- No arquivo .gitlab-ci.yml foram feitas algumas configuraçoẽs para que os testes sejam executados a cada commit realizado no projeto e dispara essa pipeline
