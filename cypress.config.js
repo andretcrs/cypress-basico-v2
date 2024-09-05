@@ -17,6 +17,7 @@ module.exports = defineConfig({
     video: false, 
     videosFolder: 'cypress/videos',
     videoCompression: 32,
+    
    
   },
 
